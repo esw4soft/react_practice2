@@ -5,22 +5,7 @@ import React, { useState } from 'react'
 function App() {
   const [total, setTotal] = useState(0)
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>hell world</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  )
+  return <h1 onClick={() => setTotal(total + 1)}>{total}</h1>
 }
 
 export default App
