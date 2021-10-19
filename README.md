@@ -13,6 +13,7 @@
 
 react app function const export
 react 快速鍵 名稱 函式型 變數宣告 輸出位置寫在下面
+<<<<<<< HEAD
 a
 =======
 練習用
@@ -33,3 +34,5 @@ a
 react app function const export
 react 快速鍵 名稱 函式型 變數宣告 輸出位置寫在下面
 >>>>>>> twicepts
+=======
+>>>>>>> parent of 8e6b1c8 (master md)
