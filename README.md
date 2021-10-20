@@ -1,6 +1,5 @@
 # react_practice
 
-<<<<<<< HEAD
 20211019 紀錄
 
 ## React 練習
@@ -13,9 +12,7 @@
 
 react app function const export
 react 快速鍵 名稱 函式型 變數宣告 輸出位置寫在下面
-<<<<<<< HEAD
 a
-=======
 練習用
 20211019 紀錄
 
@@ -33,6 +30,3 @@ a
 
 react app function const export
 react 快速鍵 名稱 函式型 變數宣告 輸出位置寫在下面
->>>>>>> twicepts
-=======
->>>>>>> parent of 8e6b1c8 (master md)
