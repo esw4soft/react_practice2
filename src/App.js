@@ -1,26 +1,23 @@
 import './App.css'
-import React, { useState } from 'react'
+import React from 'react'
 import logo from './logo.svg'
 
 function App() {
-  const [total, setTotal] = useState(0)
-  const [total2, setTotal2] = useState(0)
-  const [total3, setTotal3] = useState(0)
-
   return (
-    <>
-      <h1
-        onClick={() => {
-          setTotal(total + 1)
-          setTotal2(total2 + 3)
-          setTotal3(total3 + 5)
-        }}
-      >
-        {total}
-      </h1>
-      <h1>{total2}</h1>
-      <h1>{total3}</h1>
-    </>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>12314master03</p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React111
+        </a>
+      </header>
+    </div>
   )
 }
 
