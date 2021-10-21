@@ -14,7 +14,7 @@ class AppClass extends React.Component {
         <h1
           onClick={() => {
             this.setState({
-              total: this.state.total + 12,
+              total: this.state.total + 212,
             })
           }}
         >
