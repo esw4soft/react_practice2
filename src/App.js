@@ -6,9 +6,8 @@ import AppFunction from './components/AppFunction.js'
 function App() {
   return (
     <>
-      <AppClass />
-
-      <AppFunction />
+      <AppFunction initValue={99} />
+      <AppClass initValue={88} />
     </>
   )
 }

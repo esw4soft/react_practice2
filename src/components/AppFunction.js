@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
-function AppFunction() {
-  const [total, setTotal] = useState(0)
-
+function AppFunction(props) {
+  const [total, setTotal] = useState(props.initValue)
+  console.log(props)
   return (
     <>
       <h1
