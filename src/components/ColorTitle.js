@@ -7,6 +7,7 @@ function ColorTitle(props) {
     <>
       <h1 style={{ color: props.color }}>{props.children}</h1>
       <h2></h2>
+      <h3></h3>
       <div></div>
       <div>123</div>
     </>
