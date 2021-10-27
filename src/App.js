@@ -8,7 +8,7 @@ function App() {
   const [baseValue, setBaseValue] = useState(0)
   return (
     <>
-      <ColorTitle color="red">採色標題</ColorTitle>
+      <ColorTitle color="red">採色標題4444</ColorTitle>
     </>
   )
 }
