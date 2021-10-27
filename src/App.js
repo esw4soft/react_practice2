@@ -9,6 +9,7 @@ function App() {
   return (
     <>
       <ColorTitle color="red">採色標123題</ColorTitle>
+      <ColorTitle color="red">採色標題4444</ColorTitle>
     </>
   )
 }
