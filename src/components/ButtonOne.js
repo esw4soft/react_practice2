@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 
-function ButtonOne() {
+function ButtonOne(props) {
   return (
     <>
-      <button>One</button>
+      {props.life && (
+        <button onClick={() => props.setLife(false)}>我要消失</button>
+      )}
     </>
   )
 }

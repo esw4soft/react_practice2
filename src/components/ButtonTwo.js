@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 
-function ButtonTwo() {
+function ButtonTwo(props) {
   return (
     <>
-      <button>Two</button>
+      <button onClick={() => props.setLife(true)}>復活ㄅ</button>
     </>
   )
 }

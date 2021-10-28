@@ -1,13 +1,14 @@
 import './App.css'
 import React, { useState } from 'react'
-import ButtonOne from './components/ButtinOne'
-import ButtonTwo from './components/ButtinTwo'
+import ButtonOne from './components/ButtonOne'
+import ButtonTwo from './components/ButtonTwo'
 
 function App() {
+  const [life, setLife] = useState(true)
   return (
     <>
-      <ButtonOne />
-      <ButtonTwo />
+      <ButtonOne life={life} setLife={setLife} />
+      <ButtonTwo setLife={setLife} />
     </>
   )
 }
