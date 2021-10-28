@@ -1,12 +1,14 @@
 import './App.css'
 import React, { useState } from 'react'
-import ButtonOne from './components/ButtinOne'
-import ButtonTwo from './components/ButtinTwo'
+import ButtonOne from './components/ButtonOne'
+import ButtonTwo from './components/ButtonTwo'
 
 function App() {
+  const [appData, setAppData] = useState('App')
   return (
     <>
-      <ButtonOne />
+      <h1>App: </h1>
+      <ButtonOne textData={appData} />
       <ButtonTwo />
     </>
   )
