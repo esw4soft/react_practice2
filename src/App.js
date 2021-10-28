@@ -4,7 +4,7 @@ import ButtonOne from './components/ButtonOne'
 import ButtonTwo from './components/ButtonTwo'
 
 function App() {
-  const [appData, setAppData] = useState('App')
+  const [appData, setAppData] = useState('App1')
 
   // 子女->父母 準備接收子女的內部狀態用
   const [childData, setChildData] = useState('')

@@ -9,7 +9,7 @@ function ButtonOne(props) {
       <h1>ButtinOne: {props.textData}</h1>
 
       {/* 子女->子女 : 利用父母元件傳來的setter來傳自己的狀態資料給父母 */}
-      <button onClick={() => props.setOneToTwoData(oneData)}>One</button>
+      <button onClick={() => props.setOneToTwoData(oneData)}>One1</button>
     </>
   )
 }
