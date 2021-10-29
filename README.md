@@ -13,7 +13,7 @@
 
 React 計數器  
 類別型元件  
-函式型元件
+函式型元件  
 Props  
 JSX  
 parent<>children 傳遞資料  
