@@ -6,7 +6,6 @@ function App() {
   return (
     <>
       <Converter />
-      <div>1</div>
     </>
   )
 }
