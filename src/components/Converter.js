@@ -26,9 +26,14 @@ function Converter(props) {
           setTwd(newValue)
 
           // 設定轉換後的美金
-          setUsd(twd2usd(newValue))
+          // setUsd(twd2usd(newValue))
         }}
       />
+      <button
+        onClick={() => {
+          setUsd(twd2usd(+twd))
+        }}
+      ></button>
       <hr />
       美金：
       <input
