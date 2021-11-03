@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import MoneyInput from './MoneyInput'
 
 function Converter(props) {
   // 用於輸入使用的狀態
@@ -13,34 +14,21 @@ function Converter(props) {
 
   return (
     <>
+      <h1>美金·新台幣互轉應用程式</h1>
       {/* 值（value）對應狀態值（inputValue）,更動方法（onchange）對樣狀態設定方法（setInputValue） */}
-      新台幣：
-      <input
-        type="text"
-        value={twd}
-        onChange={(event) => {
-          // 先得到要變動的直 注意網頁上輸入的是字串需要轉為數字類型
-          const newValue = +event.target.value
-
-          // 設定新台幣值
+      <MoneyInput
+        title="新台幣"
+        money={twd}
+        setMoney={(newValue) => {
           setTwd(newValue)
-
-          // 設定轉換後的美金
-          // setUsd(twd2usd(newValue))
+          setUsd(twd2usd(newValue))
         }}
       />
-      <button
-        onClick={() => {
-          setUsd(twd2usd(+twd))
-        }}
-      ></button>
       <hr />
-      美金：
-      <input
-        type="text"
-        value={usd}
-        onChange={(event) => {
-          const newValue = +event.target.value
+      <MoneyInput
+        title="美金"
+        money={usd}
+        setMoney={(newValue) => {
           setUsd(newValue)
           setTwd(usd2twd(newValue))
         }}
