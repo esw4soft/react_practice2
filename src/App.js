@@ -1,11 +1,11 @@
 import './App.css'
 import React, { useState } from 'react'
-import Converter from './components/Converter'
+import ZipCode from './components/ZipCode'
 
 function App() {
   return (
     <>
-      <Converter />
+      <ZipCode />
     </>
   )
 }
