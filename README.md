@@ -1,15 +1,16 @@
 # react_practice
 
-20211019 紀錄
-20211029 紀錄
+20211019 紀錄  
+20211029 紀錄  
+20211105 紀錄
 
-## React 練習
+### React 練習
 
 此 repo 是用來存放 react.js 的練習  
 練習的檔案主要在 src 和 components 的資料夾  
-按照數字順序為練習順序 名稱則是練習的內容
+branch 按照數字順序為練習順序 名稱則是練習的內容
 
-#### 已練習
+#### 已完成
 
 React 計數器  
 類別型元件  
@@ -17,11 +18,17 @@ React 計數器
 Props  
 JSX  
 parent<>children 傳遞資料  
-input 可控表單元素
+input 可控表單元素  
+input 拆成個別元件  
+下拉式選單＋ map 資料呈現
+
+### 一些重要知識
+
+1. `條件 ＆＆ 求值呈現` 相當於 `if(條件)求值呈現` 的簡寫法 只有 react JSX 中才可以用
 
 ### emmet
 
 #### rafce
 
-react app function const export
+react app function const export  
 react 快速鍵 名稱 函式型 變數宣告 輸出位置寫在下面
