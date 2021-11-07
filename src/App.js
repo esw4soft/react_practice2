@@ -1,11 +1,11 @@
 import './App.css'
 import React, { useState } from 'react'
-import ZipCode from './components/ZipCode'
+import BMI from './components/BMI'
 
 function App() {
   return (
     <>
-      <ZipCode />
+      <BMI />
     </>
   )
 }
