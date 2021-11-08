@@ -30,6 +30,19 @@ class ClassLifeCycle extends React.Component {
     console.log('total(狀態):', this.state.total)
   }
 
+  // 卸載（unmounting）階段
+  // 0餘件從網頁上消失（移除）前才會觸發
+  componentWillUnmount() {
+    console.log('componentwillunmount')
+
+    // 與componentDidMount會有成對使用的情況
+    let clickme = document.getElementById('clickme')
+    console.log(clickme)
+    clickme.addEventListener('click', function () {
+      alert('你好')
+    })
+  }
+
   //   掛載(mounting) + 更新(updating)
   render() {
     console.log('render')
