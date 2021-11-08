@@ -1,11 +1,11 @@
 import './App.css'
 import React, { useState } from 'react'
-import BMI from './components/BMI'
+import ClassLifeCycle from './components/ClassLifeCycle.js'
 
 function App() {
   return (
     <>
-      <BMI />
+      <ClassLifeCycle />
     </>
   )
 }
