@@ -11,7 +11,31 @@ function FunctionLifeCycle(props) {
     console.log('模擬 componentDidmount')
   }, [])
 
-  return <>{console.log('render')} Function: Lifecycle</>
+  // 可以分開不同的工作寫模擬cmponentDidMount
+  useEffect(() => {
+    document.getElementById('clickme').addEventListener('click', function () {
+      alert('鳥好')
+    })
+  }, [])
+
+  // 模擬componentDidUpdate
+  // 注意需要有依賴性（某狀態或傳入的props值）才算是（第二傳入參數)
+  useEffect(() => {
+    if (total > 0) {
+      console.log('模擬componentDidUpdate')
+    }
+  }, [total])
+
+  return (
+    <>
+      {console.log('render')} Function: Lifecycle
+      {/* 利用id或是class讓其他的程式獲取dom介面物件 */}
+      <button id="clickme">按我一下</button>
+      <hr />
+      {/* 觀察更新階段 */}
+      <h1 onClick={() => setTotal(total + 1)}>{total}</h1>
+    </>
+  )
 }
 
 export default FunctionLifeCycle
