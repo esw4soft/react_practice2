@@ -1,3 +1,6 @@
+// 導入bootstrap所有的樣式與預設變數
+@import '~bootstrap/scss/bootstrap.scss';
+
 $color-red: rgb(219, 188, 43);
 .test {
   color: $color-red;
