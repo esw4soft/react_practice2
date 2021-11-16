@@ -7,6 +7,12 @@ function App() {
       <div className="alert alert-primary" role="alert">
         this is a primary alert
       </div>
+      <button type="button" class="btn btn-primary">
+        primary
+      </button>
+      <button type="button" class="btn btn-secondary">
+        secondary
+      </button>
     </>
   )
 }
