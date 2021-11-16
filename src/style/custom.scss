@@ -1,3 +1,8 @@
+// * 因為bootstrap主題色都有加！default , 代表我們可以輕易覆蓋樣式 , 而這也導致需要將變數寫在＠import前面
+// * 如此一來反而看起來比較特別 , 因為要覆蓋通常都是寫在下面
+$primary: rgb(148, 36, 240);
+$secondary: rgba(10, 10, 10, 0.8);
+
 // 導入bootstrap所有的樣式與預設變數
 @import '~bootstrap/scss/bootstrap.scss';
 
