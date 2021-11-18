@@ -1,56 +1,43 @@
 import React, { useState } from 'react'
+import { Container, Row, Col, Button, Modal } from 'react-bootstrap'
 
 function App() {
+  const [show, setShow] = useState(false)
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
   return (
     <>
-      <hr />
-      <br />
-      <img />
+      <Container>
+        <Row className="justify-content-md-center">
+          <Col md="auto">
+            <h1>react bootstrap</h1>
+            <Button variant="primary">primary</Button>
+            <Button variant="secondary">secondary</Button>
+            <Button variant="success">success</Button>
+            <Button variant="primary" onClick={handleShow}>
+              lauch static backdrop modal
+            </Button>
+          </Col>
+        </Row>
+      </Container>
 
-      <form>
-        <div className="form-group">
-          <label htmlFor="exampleInputEmail1">email addres</label>
-          <input
-            type="email"
-            className="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            placeholder="Enter email"
-          />
-          <small
-            id="emailHelp"
-            className="form-text text-nuted"
-            style={{ color: 'red', fontSize: '8px' }}
-          >
-            well never share tour email wowv anyone else
-          </small>
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="exampleInputEmail1">password</label>
-          <input
-            type="password"
-            className="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            placeholder="password"
-          />
-        </div>
-
-        <div className="form-check">
-          <input
-            type="checkbox"
-            className="form-check-input"
-            id="exampleCheck1"
-          />
-          <label htmlFor="exampleCheck1" className="form-check-label">
-            check me out
-          </label>
-        </div>
-        <button type="submit" className="btn btn-primary">
-          submit
-        </button>
-      </form>
+      <Modal
+        show={show}
+        onHide={handleClose}
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>modal title</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>i will not clase id you click outside me</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            close
+          </Button>
+          <Button variant="primary">understood</Button>
+        </Modal.Footer>
+      </Modal>
     </>
   )
 }
