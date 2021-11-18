@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { Container, Row, Col, Button, Modal } from 'react-bootstrap'
+import { FaReact } from 'react-icons/fa'
+import { GiArrowed } from 'react-icons/gi'
 
 function App() {
   const [show, setShow] = useState(false)
@@ -10,11 +12,13 @@ function App() {
       <Container>
         <Row className="justify-content-md-center">
           <Col md="auto">
-            <h1>react bootstrap</h1>
+            <h1>react bootstrap & icons</h1>
+            <GiArrowed size="50" color="blue" />
             <Button variant="primary">primary</Button>
             <Button variant="secondary">secondary</Button>
             <Button variant="success">success</Button>
             <Button variant="primary" onClick={handleShow}>
+              <FaReact />
               lauch static backdrop modal
             </Button>
           </Col>
