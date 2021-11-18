@@ -25,6 +25,9 @@ input 拆成個別元件
 ### 一些重要知識
 
 1. `條件 ＆＆ 求值呈現` 相當於 `if(條件)求值呈現` 的簡寫法 只有 react JSX 中才可以用
+2. 在 VScode-eslint-prettier 自動格式化設定中, vscode 設定中的 `prettier.disableLanguages` 已被棄用 目前有兩個方法:
+   1. 在特定語言啟用 prettier `"[css]": {"editor.defaultFormatter": "esbenp.prettier-vscode"}`
+   2. 全域設定 prettier, 在特定語言禁用 `"editor.defaultFormatter": "esbenp.prettier-vscode",` `"[javascript]": {"editor.defaultFormatter": null},`
 
 ### emmet
 

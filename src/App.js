@@ -6,6 +6,7 @@ function App() {
       <hr />
       <br />
       <img />
+
       <form>
         <div className="form-group">
           <label htmlFor="exampleInputEmail1">email addres</label>
