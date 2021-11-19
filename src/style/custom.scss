@@ -6,7 +6,10 @@ $secondary: rgba(10, 10, 10, 0.8);
 // 導入bootstrap所有的樣式與預設變數
 @import '~bootstrap/scss/bootstrap.scss';
 
-$color-red: rgb(219, 188, 43);
-.test {
-  color: $color-red;
+main>.container {
+  padding: 60px 15px 0;
+}
+
+.footer {
+  background: #f5f5f5;
 }
