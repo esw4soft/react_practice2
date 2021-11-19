@@ -31,7 +31,6 @@ input 拆成個別元件
 
 ### emmet
 
-#### rafce
-
-react app function const export  
-react 快速鍵 名稱 函式型 變數宣告 輸出位置寫在下面
+1. #### rafce
+   react app function const export  
+   react 快速鍵 名稱 函式型 變數宣告 輸出位置寫在下面
