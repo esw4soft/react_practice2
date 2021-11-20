@@ -3,41 +3,58 @@ import MyNavbar from './components/MyNavbar'
 import MyFooter from './components/MyFooter'
 import MainContent from './components/MainContent'
 
-import DatePicker from 'react-datepicker'
-import 'react-datepicker/dist/react-datepicker.css'
-
-// 改為台灣繁體朱文的日期樣式
-import { registerLocale, setfaultLocale } from 'react-datepicker'
-import { zhTW } from 'date-fns/esm/locale'
-
-registerLocale('zh-TW', zhTW)
+import { data } from './data'
 
 function App() {
-  const [birth, setBirth] = useState(new Date())
-  const [age, setAge] = useState(0)
+  const [student, setStudent] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
 
-  // ~~ 為轉為整數值
-  const calcAge = (birth) => ~~((new Date() - birth) / 31557600000)
-
-  // 選完日期就改變年紀
-  // componentDidUpdate
+  // componentDidMount
   useEffect(() => {
-    setAge(calcAge(birth))
-  }, [birth])
+    // 開始仔入資料 先出現spinner
+    setIsLoading(true)
+
+    // 從伺服器得到資料 然後設定到student狀態
+    setStudent(data)
+
+    // 最後關起spinner 改呈現真正資料
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 2000)
+  }, [])
+
+  const spinner = (
+    <>
+      <div className="spinner-grow text-success" role="status"></div>
+      <div className="spinner-grow text-danger" role="status"></div>
+      <div className="spinner-grow text-warning" role="status"></div>
+      <span className="sr-only">Loading...</span>
+    </>
+  )
+
+  const display = (
+    <table className="table table-bordered table-striped">
+      <thead className="thead-light">
+        <th>做好</th>
+        <th>姓名</th>
+        <th>生日</th>
+      </thead>
+      <tbody>
+        {student.map((v, i) => (
+          <tr key={i}>
+            <td>{v.id}</td>
+            <td>{v.name}</td>
+            <td>{v.birth}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  )
 
   return (
     <>
       <MyNavbar />
-      <MainContent>
-        <DatePicker
-          dateFormat="yyyy-MM-dd"
-          selected={birth}
-          locale="zh-TW"
-          onChange={(date) => setBirth(date)}
-        />
-        <h2>{age > 1 ? '滿18歲' : '未滿18歲'}</h2>
-        <button onClick={() => {}}>檢查是否滿18歲</button>
-      </MainContent>
+      <MainContent>{isLoading ? spinner : display}</MainContent>
       <MyFooter />
     </>
   )
