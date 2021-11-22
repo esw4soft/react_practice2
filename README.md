@@ -24,8 +24,8 @@ input 可控表單元素 拆成個別元件
 下拉式選單＋ map 資料呈現  
 生命週期 函式型 類別型  
 生命週期 掛載 更新 卸載各種階段  
-React 加入 Bootstrap SCSS
-React 整合 jQuery (useRefs)
+React 加入 Bootstrap SCSS  
+React 整合 jQuery (useRefs)  
 React-router
 
 ### 一些重要知識訊息
