@@ -1,62 +1,34 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React from 'react'
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'
+
 import MyNavbar from './components/MyNavbar'
 import MyFooter from './components/MyFooter'
 import MainContent from './components/MainContent'
 
-import { data } from './data'
+import Home from './pages/Home'
+import About from './pages/About'
 
 function App() {
-  const [student, setStudent] = useState([])
-  const [isLoading, setIsLoading] = useState(false)
-
-  // componentDidMount
-  useEffect(() => {
-    // 開始仔入資料 先出現spinner
-    setIsLoading(true)
-
-    // 從伺服器得到資料 然後設定到student狀態
-    setStudent(data)
-
-    // 最後關起spinner 改呈現真正資料
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 2000)
-  }, [])
-
-  const spinner = (
-    <>
-      <div className="spinner-grow text-success" role="status"></div>
-      <div className="spinner-grow text-danger" role="status"></div>
-      <div className="spinner-grow text-warning" role="status"></div>
-      <span className="sr-only">Loading...</span>
-    </>
-  )
-
-  const display = (
-    <table className="table table-bordered table-striped">
-      <thead className="thead-light">
-        <th>做好</th>
-        <th>姓名</th>
-        <th>生日</th>
-      </thead>
-      <tbody>
-        {student.map((v, i) => (
-          <tr key={i}>
-            <td>{v.id}</td>
-            <td>{v.name}</td>
-            <td>{v.birth}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  )
-
   return (
-    <>
-      <MyNavbar />
-      <MainContent>{isLoading ? spinner : display}</MainContent>
-      <MyFooter />
-    </>
+    // ROUTER 包 <></>
+    <Router>
+      <>
+        <MyNavbar />
+        <MainContent>
+          {/* navbar:Link */}
+          <Link to="/">首頁</Link>
+          <Link to="/about">關於我們</Link>
+
+          {/* 以下為匹配路徑 路由列表:Switch>>Route */}
+          <Routes>
+            <Route path="/about" element={<About />} />
+            {/* exact: 精確路徑 , 如果沒寫exact可能會連到路徑有/的任何頁*/}
+            <Route exact path="/" element={<Home />} />
+          </Routes>
+        </MainContent>
+        <MyFooter />
+      </>
+    </Router>
   )
 }
 
