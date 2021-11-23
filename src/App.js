@@ -13,6 +13,8 @@ import Login from './pages/Login'
 
 // withRouter 高階元件樣式(HOC)範例
 import ProductBaby from './pages/ProductBaby'
+import ProductMen from './pages/ProductMen'
+import ProductWomen from './pages/ProductWomen'
 
 function App() {
   const [isAuth, setIsAuth] = useState(false)
@@ -45,6 +47,14 @@ function App() {
 
             <Route path="/product/baby">
               <ProductBaby />
+            </Route>
+
+            <Route path="/product/men">
+              <ProductMen />
+            </Route>
+
+            <Route path="/product/women">
+              <ProductWomen />
             </Route>
 
             <Route exact path="/">
