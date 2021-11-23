@@ -5,7 +5,14 @@ import { withRouter } from 'react-router-dom'
 function ProductBaby(props) {
   // 需經過高階元件後才能得到react-router的三大鼠性質
   console.log(props)
-  return <>produect -baby</>
+  return (
+    <>
+      <h1>商品 - baby嬰兒</h1>
+      {/* 由props.match.params 可以得到網址參數值 */}
+      商品編號:{props.match.params.id}
+    </>
+  )
 }
 
+// 輸出時加上高階元件(HOC)
 export default withRouter(ProductBaby)

@@ -45,7 +45,8 @@ function App() {
               <Login isAuth={isAuth} setIsAuth={setIsAuth} />
             </Route>
 
-            <Route path="/product/baby">
+            {/* `:id?` 是網址上的參數列 */}
+            <Route path="/product/baby/:id?">
               <ProductBaby />
             </Route>
 
@@ -61,7 +62,9 @@ function App() {
               <Home isAuth={isAuth} />
             </Route>
           </Switch>
+          {/* end路油表 */}
         </MainContent>
+        {/*頁尾 */}
         <MyFooter />
       </>
     </Router>
