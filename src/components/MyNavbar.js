@@ -8,7 +8,7 @@ import {
   Button,
 } from 'react-bootstrap'
 
-import { BrowerRouter, Route, Link, Routes } from 'react-router-dom'
+import { BrowerRouter, Route, Link, Routes, NavLink } from 'react-router-dom'
 
 function MyNavbar(props) {
   return (
@@ -24,14 +24,25 @@ function MyNavbar(props) {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="#features">fratures</Nav.Link>
-            <Nav.Link href="#pricing">pricing</Nav.Link>
-            <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
+            <Nav.Link as={NavLink} to="/" exact>
+              首頁
+            </Nav.Link>
+            <Nav.Link as={NavLink} to="/about">
+              館與我們
+            </Nav.Link>
+            <Nav.Link as={NavLink} to="/login">
+              會員登入
+            </Nav.Link>
+            <NavDropdown title="產品分類" id="collasible-nav-dropdown">
+              <NavDropdown.Item as={NavLink} to="/product/men">
+                MEN 男性
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="/product/baby">
+                Baby 嬰兒
+              </NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="/product/women">
+                WOMEN 女性
+              </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">
                 Separated link
