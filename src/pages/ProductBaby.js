@@ -10,6 +10,17 @@ function ProductBaby(props) {
       <h1>商品 - baby嬰兒</h1>
       {/* 由props.match.params 可以得到網址參數值 */}
       商品編號:{props.match.params.id}
+      <hr />
+      {/* 網址參數值id 不存在時呈現 */}
+      {!props.match.params.id && (
+        <button
+          onClick={() => {
+            props.history.goBack()
+          }}
+        >
+          到會員登入區
+        </button>
+      )}
     </>
   )
 }
