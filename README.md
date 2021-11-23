@@ -38,6 +38,9 @@ React-router
    在 v6 版本中 Switch 已經被 Routes 取代, 主要強調 route element  
    `import { Switch, Route } from "react-router-dom";` >> `import { Routes ,Route } from 'react-router-dom';`  
    `<Route path="/" component={Home} />` >> `<Route path='/welcome' element={<Home/>} />`
+4. Replace any withRouter usage with hooks.  
+   react-router v5 版本 withRouter 被建議用 hook 取代 但還沒被移除, v6 版本已被移除無法使用, 目前找到是用 useRoutes 來做  
+   不過因為還在練習階段, 所以現階段先以理解 withRouter 為主, 所以 react-router-dom react-router 降版本到 v5
 
 ### 常用 emmet
 
