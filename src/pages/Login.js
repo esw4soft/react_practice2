@@ -1,5 +1,8 @@
 import React from 'react'
 
+// breadcrumb
+import MyBreadCrumb from '../components/MyBreadCrumb'
+
 function Login(props) {
   const btn = (
     <>
@@ -32,6 +35,7 @@ function Login(props) {
   return (
     <>
       <h1>會員登入頁面</h1>
+      <MyBreadCrumb />
 
       {isAuth ? out : btn}
     </>
