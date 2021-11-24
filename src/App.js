@@ -1,5 +1,10 @@
 import React, { useState } from 'react'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+} from 'react-router-dom'
 
 // 畫面元件
 import MyNavbar from './components/MyNavbar'
@@ -42,12 +47,15 @@ function App() {
               <About isAuth={isAuth} />
             </Route>
             <Route path="/login">
-              <Login isAuth={isAuth} setIsAuth={setIsAuth} />
+              <Login
+                isAuth={isAuth}
+                setIsAuth={setIsAuth}
+              />
             </Route>
 
             {/* `:id?` 是網址上的參數列 */}
             <Route path="/product/baby/:id?">
-              <ProductBaby />
+              <ProductBaby isAuth={isAuth} />
             </Route>
 
             <Route path="/product/men">

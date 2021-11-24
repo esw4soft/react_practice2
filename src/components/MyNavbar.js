@@ -8,7 +8,13 @@ import {
   Button,
 } from 'react-bootstrap'
 
-import { BrowerRouter, Route, Link, Routes, NavLink } from 'react-router-dom'
+import {
+  BrowerRouter,
+  Route,
+  Link,
+  Routes,
+  NavLink,
+} from 'react-router-dom'
 
 function MyNavbar(props) {
   return (
@@ -20,7 +26,9 @@ function MyNavbar(props) {
         variant="dark"
         fixed="top"
       >
-        <Navbar.Brand href="#home">react-bootstrap</Navbar.Brand>
+        <Navbar.Brand href="#home">
+          react-bootstrap
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
@@ -33,14 +41,26 @@ function MyNavbar(props) {
             <Nav.Link as={NavLink} to="/login">
               會員登入
             </Nav.Link>
-            <NavDropdown title="產品分類" id="collasible-nav-dropdown">
-              <NavDropdown.Item as={NavLink} to="/product/men">
+            <NavDropdown
+              title="產品分類"
+              id="collasible-nav-dropdown"
+            >
+              <NavDropdown.Item
+                as={NavLink}
+                to="/product/men"
+              >
                 MEN 男性
               </NavDropdown.Item>
-              <NavDropdown.Item as={NavLink} to="/product/baby">
+              <NavDropdown.Item
+                as={NavLink}
+                to="/product/baby"
+              >
                 Baby 嬰兒
               </NavDropdown.Item>
-              <NavDropdown.Item as={NavLink} to="/product/women">
+              <NavDropdown.Item
+                as={NavLink}
+                to="/product/women"
+              >
                 WOMEN 女性
               </NavDropdown.Item>
               <NavDropdown.Divider />

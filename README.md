@@ -4,7 +4,8 @@
 20211029 紀錄  
 20211105 紀錄  
 20211122 紀錄 新增 emmet 語法  
-20211123 紀錄 新增 withRouter 相關訊息
+20211123 紀錄 新增 withRouter 相關訊息  
+20211124 紀錄 新增麵包屑流程
 
 ### React 練習
 
@@ -27,7 +28,7 @@ input 可控表單元素 拆成個別元件
 生命週期 掛載 更新 卸載各種階段  
 React 加入 Bootstrap SCSS  
 React 整合 jQuery (useRefs)  
-React-router
+React-router-dom, withRouter 高階元件
 
 ### 一些重要知識訊息
 
@@ -63,5 +64,12 @@ React-router
    5. `import React, { useRef } from 'react'`
 3. #### rcc, rce, rcep
    ##### 類別型快速鍵
-   1. r c c(e) p
+   1. r c c(e) p  
       快速鍵 類別型 輸出位置 props
+
+### 麵包屑流程
+
+1.  建立麵包屑元件配合 location.pathname 做路徑轉文字
+2.  建立 config 資料夾裡面放入路徑轉文字資料
+3.  在每個頁面加入麵包屑元件  
+    流程:點選頁面 >> 載入麵包削元件 >> 讀取 location.pathname 配合 config 資料做路徑轉文字 >> 在渲染到每個頁面上
