@@ -21,6 +21,9 @@ import ProductBaby from './pages/ProductBaby'
 import ProductMen from './pages/ProductMen'
 import ProductWomen from './pages/ProductWomen'
 
+import NotFoundPage from './pages/NotFoundPage'
+import ScrollToTop from './components/ScrollToTop'
+
 function App() {
   const [isAuth, setIsAuth] = useState(false)
 
@@ -41,36 +44,39 @@ function App() {
 
           <hr />
 
-          {/* 以下為匹配路徑 路由列表:Switch>>Route */}
-          <Switch>
-            <Route path="/about">
-              <About isAuth={isAuth} />
-            </Route>
-            <Route path="/login">
-              <Login
-                isAuth={isAuth}
-                setIsAuth={setIsAuth}
-              />
-            </Route>
+          {/* 用scrolltop 將switch包住 */}
+          <ScrollToTop>
+            {/* 以下為匹配路徑 路由列表:Switch>>Route */}
+            <Switch>
+              <Route path="/about">
+                <About isAuth={isAuth} />
+              </Route>
+              <Route path="/login">
+                <Login
+                  isAuth={isAuth}
+                  setIsAuth={setIsAuth}
+                />
+              </Route>
 
-            {/* `:id?` 是網址上的參數列 */}
-            <Route path="/product/baby/:id?">
-              <ProductBaby isAuth={isAuth} />
-            </Route>
+              {/* `:id?` 是網址上的參數列 */}
+              <Route path="/product/baby/:id?">
+                <ProductBaby isAuth={isAuth} />
+              </Route>
 
-            <Route path="/product/men">
-              <ProductMen />
-            </Route>
+              <Route path="/product/men">
+                <ProductMen />
+              </Route>
 
-            <Route path="/product/women">
-              <ProductWomen />
-            </Route>
+              <Route path="/product/women">
+                <ProductWomen />
+              </Route>
 
-            <Route exact path="/">
-              <Home isAuth={isAuth} />
-            </Route>
-          </Switch>
-          {/* end路油表 */}
+              <Route exact path="/">
+                <Home isAuth={isAuth} />
+              </Route>
+            </Switch>
+            {/* end路油表 */}
+          </ScrollToTop>
         </MainContent>
         {/*頁尾 */}
         <MyFooter />
