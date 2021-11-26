@@ -68,11 +68,14 @@ function App() {
               </Route>
 
               <Route path="/product/women">
-                <ProductWomen />
+                <ProductWomen isAuth={isAuth} />
               </Route>
 
               <Route exact path="/">
                 <Home isAuth={isAuth} />
+              </Route>
+              <Route path="*">
+                <NotFoundPage />
               </Route>
             </Switch>
             {/* end路油表 */}
