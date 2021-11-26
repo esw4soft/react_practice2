@@ -10,44 +10,53 @@ function MyBreadCrumb(props) {
 
   // 轉換pathname路徑為文字
   // 回傳陣列(如果有像 `產品/嬰兒`)
-  const convertPathname2Text = (pathname) => {
-    console.log(pathname)
-    const index = pathnameList.findIndex(
-      (v, i) => v === pathname
-    )
-    return index > -1
-      ? pathnameTextList[index].split('/')
-      : ''
-  }
+  // const convertPathname2Text = (pathname) => {
+  //   console.log(pathname)
+  //   const index = pathnameList.findIndex(
+  //     (v, i) => v === pathname
+  //   )
+  //   return index > -1 ?
+  //   pathnameTextList[index].split('/')
+  //     : ''
+  // }
+
+  // find index
+  const findPathnameIndex = (pathname) =>
+    pathnameList.findIndex((v, i) => v === pathname)
 
   // 有一個項目和兩個項目的情況
-  const formatText = (textArray) => {
-    console.log(textArray)
-    return textArray.length > 1 ? (
-      <>
-        <li
-          className="breadcrumb-item active"
-          aria-current="page"
-        >
-          {textArray[0]}
+  const formatText = (index) => {
+    console.log(index)
+    // 產品/嬰兒/出生而  >> ["","產品","嬰兒","出生而"]
+    const textArray = pathnameTextList[index].split('/')
+
+    // "product/baby/birth" >> ["","product","baby","abirth"]
+    const pathArray = pathnameList[index].split('/')
+
+    const listArray = textArray.map((v, i, array) => {
+      if (i === 0) return ''
+
+      if (i === array.length - 1) {
+        return (
+          <li
+            className="breadcrumb-item active"
+            aria-current="page"
+          >
+            {v}
+          </li>
+        )
+      }
+
+      return (
+        <li className="breadcrumb-item">
+          <Link to={pathArray.slice(0, i + 1).join('/')}>
+            {v}
+          </Link>
         </li>
-        <li
-          className="breadcrumb-item active"
-          aria-current="page"
-        >
-          {textArray[1]}
-        </li>
-      </>
-    ) : (
-      <>
-        <li
-          className="breadcrumb-item active"
-          aria-current="page"
-        >
-          {textArray[0]}
-        </li>
-      </>
-    )
+      )
+    })
+
+    return listArray
   }
 
   return (
@@ -57,9 +66,7 @@ function MyBreadCrumb(props) {
           <li className="breadcrumb-item">
             <Link to="/">首頁</Link>
           </li>
-          {formatText(
-            convertPathname2Text(location.pathname)
-          )}
+          {formatText(findPathnameIndex(location.pathname))}
         </ol>
       </nav>
     </>
