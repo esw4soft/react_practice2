@@ -165,6 +165,9 @@ function Login(props) {
         純粹(pure)函式 與 不純粹(impure)函式
         兩者來區分，但這不光只有無副作用的差異，還有其他的條件。
       </p>
+      <button onClick={() => props.history.push('/about')}>
+        關於我們
+      </button>
     </>
   )
 }
