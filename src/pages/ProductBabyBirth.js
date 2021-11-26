@@ -1,21 +1,16 @@
 import React from 'react'
-// 高階元件樣式(HOC) 增強元件用的
-import { withRouter, Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
-// breadcrumb
 import MyBreadCrumb from '../components/MyBreadCrumb'
 
-function ProductBaby(props) {
-  // 需經過高階元件後才能得到react-router的三大鼠性質
-  console.log(props)
+function ProductBabyBirth(props) {
   return (
     <>
-      <h1>商品 - baby嬰兒</h1>
+      <h2>商品 - baby123嬰兒 新生兒</h2>
+      <h2>商品 - baby123嬰兒 新生兒</h2>
       <MyBreadCrumb />
-      {/* 由props.match.params 可以得到網址參數值 */}
-      商品編號:{props.match.params.id}
+      倉品編號: {props.match.params.id}
       <hr />
-      {/* 網址參數值id 不存在時呈現 */}
       {!props.match.params.id && (
         <button
           onClick={() => {
@@ -35,9 +30,9 @@ function ProductBaby(props) {
           到會員登入區
         </button>
       )}
+      <div>123456</div>
     </>
   )
 }
 
-// 輸出時加上高階元件(HOC)
-export default withRouter(ProductBaby)
+export default withRouter(ProductBabyBirth)

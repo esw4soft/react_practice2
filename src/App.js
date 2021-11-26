@@ -18,6 +18,8 @@ import Login from './pages/Login'
 
 // withRouter 高階元件樣式(HOC)範例
 import ProductBaby from './pages/ProductBaby'
+import ProductBabyBirth from './pages/ProductBabyBirth'
+import ProductHome from './pages/ProductHome'
 import ProductMen from './pages/ProductMen'
 import ProductWomen from './pages/ProductWomen'
 
@@ -41,6 +43,8 @@ function App() {
           <Link to="/about">關於我們</Link>
           <Link to="/login">會員登入頁面</Link>
           <Link to="/product/baby">商品-嬰兒</Link>
+          <br />
+          <Link to="/product/baby/birth">新生兒</Link>
 
           <hr />
 
@@ -59,10 +63,19 @@ function App() {
               </Route>
 
               {/* `:id?` 是網址上的參數列 */}
-              <Route path="/product/baby/:id?">
+              {/* <Route path="/product/baby/:id?">
+                <ProductBaby isAuth={isAuth} />
+              </Route> */}
+              <Route path="/product/baby">
                 <ProductBaby isAuth={isAuth} />
               </Route>
+              <Route path="/product/baby/birth">
+                <ProductBabyBirth isAuth={isAuth} />
+              </Route>
 
+              <Route path="/product">
+                <ProductHome />
+              </Route>
               <Route path="/product/men">
                 <ProductMen />
               </Route>
