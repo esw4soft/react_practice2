@@ -2,20 +2,17 @@ import React, { useEffect, useState } from 'react'
 import { withRouter } from 'react-router-dom'
 
 // 頁面切換時要用卷軸讓頁面回到最上方
-function ScrollToTop(props) {
-  console.log(props)
-  const [preprops, setPreprops] = useState(
-    props.location.pathname
-  )
-
+function ScrollToTop({ children, history }) {
   useEffect(() => {
-    if (props.location.pathname !== preprops) {
-      setPreprops(props.location.pathname)
+    const unlisten = history.listen(() => {
       window.scrollTo(0, 0)
+    })
+    return () => {
+      unlisten()
     }
-  }, [preprops])
+  }, [])
 
-  return props.children
+  return <>{children}</>
 }
 
 export default withRouter(ScrollToTop)
