@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>async await範例</h1>
+
+    <script>
+        // setTimeout有異步執行的特性 a >> c >> b
+        // console.log("a")
+        // setTimeout(function () { console.log("b") }, 0)
+        // console.log("c")
+
+        // 轉為同步執行的語法 a >> b >> c
+        async function test() {
+            console.log('a')
+
+            const resolveValue = await new Promise(function (resolve, reject) {
+                setTimeout(function () { resolve('b') }, 3000)
+            })
+            console.log(resolveValue)
+
+            console.log("c")
+
+        }
+
+        test()
+
+
+    </script>
+</body>
+
+</html>
