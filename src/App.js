@@ -23,6 +23,8 @@ import ProductHome from './pages/ProductHome'
 import ProductMen from './pages/ProductMen'
 import ProductWomen from './pages/ProductWomen'
 
+import Member from './pages/Member'
+
 import NotFoundPage from './pages/NotFoundPage'
 import ScrollToTop from './components/ScrollToTop'
 
@@ -40,8 +42,11 @@ function App() {
           <h1>link/to</h1>
           {/* navbar:Link */}
           <Link to="/">首頁</Link>
+          <br />
           <Link to="/about">關於我們</Link>
+          <br />
           <Link to="/login">會員登入頁面</Link>
+          <br />
           <Link to="/product/baby">商品-嬰兒</Link>
           <br />
           <Link to="/product/baby/birth">新生兒</Link>
@@ -54,6 +59,9 @@ function App() {
             <Switch>
               <Route path="/about">
                 <About isAuth={isAuth} />
+              </Route>
+              <Route path="/member">
+                <Member />
               </Route>
               <Route path="/login">
                 <Login
