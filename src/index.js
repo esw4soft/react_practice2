@@ -4,6 +4,35 @@ import './index.scss'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 
+// 第一步: 匯入creatStore, combineReducers
+import { createStore, combineReducers } from 'redux'
+
+// 第二步: 寫出reducer
+// 累加器/歸納器寫法
+// action = {type : 'increment'}
+function counter(state = 999, action) {
+  switch (action.type) {
+    case 'increment':
+      return { count: state.count + 1 }
+    case 'decrement':
+      return { count: state.count - 1 }
+    default:
+      return state
+  }
+}
+
+// 第二之一: 合併reducer
+const rootReducer = combineReducers({
+  counter,
+})
+
+// 第三步: 由rootReducer建立store
+const store = createStore(
+  rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ &&
+    window.__REDUX_DEVTOOLS_EXTENSION__()
+)
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
