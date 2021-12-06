@@ -28,6 +28,9 @@ import Member from './pages/Member'
 import NotFoundPage from './pages/NotFoundPage'
 import ScrollToTop from './components/ScrollToTop'
 
+// Redux
+import CounterRedux from './pages/CounterRedux'
+
 // 定義樣式給 useContext使用
 const themes = {
   light: {
@@ -120,6 +123,7 @@ function App() {
         </MainContent>
         {/*頁尾 */}
         <MyFooter />
+        <CounterRedux />
       </>
     </Router>
   )
