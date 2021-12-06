@@ -31,8 +31,8 @@ import ScrollToTop from './components/ScrollToTop'
 // 定義樣式給 useContext使用
 const themes = {
   light: {
-    foreground: '#000000',
-    background: '#eeeeee',
+    foreground: 'blue',
+    background: 'red',
   },
   dark: {
     foreground: '#ffffff',
