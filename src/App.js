@@ -28,6 +28,21 @@ import Member from './pages/Member'
 import NotFoundPage from './pages/NotFoundPage'
 import ScrollToTop from './components/ScrollToTop'
 
+// 定義樣式給 useContext使用
+const themes = {
+  light: {
+    foreground: '#000000',
+    background: '#eeeeee',
+  },
+  dark: {
+    foreground: '#ffffff',
+    background: '#222222',
+  },
+}
+// 建立樣板ThemeContext 可以獨立export出去一個檔案
+export const ThemeContext = React.createContext(
+  themes.light
+)
 
 function App() {
   const [isAuth, setIsAuth] = useState(false)
