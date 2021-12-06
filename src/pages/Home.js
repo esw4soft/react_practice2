@@ -1,4 +1,5 @@
 import React from 'react'
+import Counter from '../reducers/Counter.js'
 
 function Home(props) {
   const { isAuth } = props
@@ -6,6 +7,7 @@ function Home(props) {
     <>
       <h1>首頁</h1>
       {isAuth ? '會員登入, Xx你好' : '未登入'}
+      <Counter />
     </>
   )
 }
