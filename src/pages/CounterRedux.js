@@ -1,3 +1,4 @@
+import React from 'react'
 import { connect } from 'react-redux'
 
 function CounterRedux(props) {
@@ -6,7 +7,7 @@ function CounterRedux(props) {
 
   return (
     <>
-      <h1>{props.total}</h1>
+      <h1>{props.total}12</h1>
       <button
         onClick={() => {
           // 改用dispatch發送動作 改變redux裡的store中的記錄的state值

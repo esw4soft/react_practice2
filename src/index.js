@@ -25,9 +25,43 @@ function counter(state = { count: 999 }, action) {
   }
 }
 
+// action = {type: 'ADD_TODO', text: text}
+// ex. state = ['買牛奶', '學redux']
+function todos(state = [], action) {
+  switch (action.type) {
+    case 'ADD_TODO':
+      return [action.text, ...state]
+    case 'DEL_TODO':
+      return state.filter((v) => v !== action.text)
+    default:
+      return state
+  }
+}
+
+// action types: ADD_ITEM, DEL_ITEM, UPDATE_ITEM, RESET_ITEM
+function cart(state = [], action) {
+  switch (action.type) {
+    case 'ADD_ITEM':
+      return [
+        {
+          id: 1,
+          name: 'iphone 12 pro max',
+          price: 45000,
+          amount: 1,
+        },
+      ]
+    case 'DEL_ITEM':
+      return []
+    default:
+      return state
+  }
+}
+
 // 第二之一: 合併reducer
 const rootReducer = combineReducers({
   counter,
+  todos,
+  cart,
 })
 
 // 第三步: 由rootReducer建立store

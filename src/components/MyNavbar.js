@@ -44,6 +44,9 @@ function MyNavbar(props) {
             <Nav.Link as={NavLink} to="/member">
               會員管理
             </Nav.Link>
+            <Nav.Link as={NavLink} to="/counter-redux">
+              CounterRedux
+            </Nav.Link>
             <NavDropdown
               title="產品分類"
               id="collasible-nav-dropdown"
