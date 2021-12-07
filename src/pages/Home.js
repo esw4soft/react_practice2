@@ -1,5 +1,5 @@
 import React from 'react'
-import Counter from '../reducers/Counter.js'
+import Counter from '../reducers/Cbounter.js'
 import Context1 from './Context1.js'
 
 function Home(props) {

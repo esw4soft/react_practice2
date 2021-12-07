@@ -5,7 +5,7 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 
 // 第一步: 匯入creatStore, combineReducers
-import { createStore, combineReducers } from 'redux'
+import { createStore } from 'redux'
 
 // Provider元件是一個在整合React應用時，必須要使用於最上層的元件。
 // Provider用來綁定 react 跟 redux store
@@ -13,56 +13,7 @@ import { Provider } from 'react-redux'
 
 // 第二步: 寫出reducer
 // 累加器/歸納器寫法
-// action = {type : 'increment'}
-function counter(state = { count: 999 }, action) {
-  switch (action.type) {
-    case 'increment':
-      return { count: state.count + 1 }
-    case 'decrement':
-      return { count: state.count - 1 }
-    default:
-      return state
-  }
-}
-
-// action = {type: 'ADD_TODO', text: text}
-// ex. state = ['買牛奶', '學redux']
-function todos(state = [], action) {
-  switch (action.type) {
-    case 'ADD_TODO':
-      return [action.text, ...state]
-    case 'DEL_TODO':
-      return state.filter((v) => v !== action.text)
-    default:
-      return state
-  }
-}
-
-// action types: ADD_ITEM, DEL_ITEM, UPDATE_ITEM, RESET_ITEM
-function cart(state = [], action) {
-  switch (action.type) {
-    case 'ADD_ITEM':
-      return [
-        {
-          id: 1,
-          name: 'iphone 12 pro max',
-          price: 45000,
-          amount: 1,
-        },
-      ]
-    case 'DEL_ITEM':
-      return []
-    default:
-      return state
-  }
-}
-
-// 第二之一: 合併reducer
-const rootReducer = combineReducers({
-  counter,
-  todos,
-  cart,
-})
+import { rootReducer } from './reducers/index'
 
 // 第三步: 由rootReducer建立store
 const store = createStore(

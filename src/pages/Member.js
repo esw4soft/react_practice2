@@ -9,31 +9,32 @@ function Member(props) {
     setIsLoading(true)
 
     // 要使用try-catch來作錯誤處理
-    try {
-      // 從伺服器得到資料
-      const response = await fetch(
-        'http://localhost:5555/users',
-        { method: 'get' }
-      )
+    // try {
+    //   // 從伺服器得到資料
+    //   const response = await fetch(
+    //     'http://localhost:5555/users',
+    //     { method: 'get' }
+    //   )
 
-      // ok只能判斷201-299漲態馬的情況
-      if (response.ok) {
-        // 頗析資料為js的數值
-        const data = await response.json()
+    //   // ok只能判斷201-299漲態馬的情況
+    //   if (response.ok) {
+    //     // 頗析資料為js的數值
+    //     const data = await response.json()
 
-        // 設定資料到member狀態
-        setMembers(data)
-      }
+    //     // 設定資料到member狀態
+    //     setMembers(data)
+    //   }
 
-      // 最後關起spinner 改呈現真正資料
-      setTimeout(() => {
-        setIsLoading(false)
-      }, 3000)
-    } catch (error) {
-      // 發生錯誤地處理狀態
-      alert('無法取得伺服器資料 請稍後再試')
-      console.log(error)
-    }
+    //   // 最後關起spinner 改呈現真正資料
+    //   setTimeout(() => {
+    //     setIsLoading(false)
+    //   }, 3000)
+    // } catch (error) {
+    //   // 發生錯誤地處理狀態
+    //   alert('無法取得伺服器資料 請稍後再試')
+    //   console.log(error)
+    // }
+    alert('我進來了')
   }
 
   // componentDidMount
