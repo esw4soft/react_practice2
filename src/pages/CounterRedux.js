@@ -1,5 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import {
+  ADD_VALUE,
+  SUB_VALUE,
+} from '../actions/actionTypes'
 
 function CounterRedux(props) {
   // 觀察props裡的得到store對應和方法
@@ -7,11 +11,14 @@ function CounterRedux(props) {
 
   return (
     <>
-      <h1>{props.total}12</h1>
+      <h1>{props.total}</h1>
       <button
         onClick={() => {
           // 改用dispatch發送動作 改變redux裡的store中的記錄的state值
-          props.dispatch({ type: 'increment' })
+          // props.dispatch({ type: 'increment' })
+
+          // 改用變數取代
+          props.dispatch({ type: ADD_VALUE })
         }}
       >
         +1
@@ -19,7 +26,10 @@ function CounterRedux(props) {
       <button
         onClick={() => {
           // 改用dispatch發送動作 改變redux裡的store中的記錄的state值
-          props.dispatch({ type: 'decrement' })
+          // props.dispatch({ type: 'decrement' })
+
+          // 改用變數取代
+          props.dispatch({ type: SUB_VALUE })
         }}
       >
         -1
