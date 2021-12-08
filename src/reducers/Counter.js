@@ -4,14 +4,14 @@ import {
 } from '../actions/actionTypes'
 //action = {type :'increment'}
 export default function counter(
-  state = { count: 999 },
+  state = { count: 100 },
   action
 ) {
   switch (action.type) {
     case ADD_VALUE:
-      return { count: state.count + 1 }
+      return { count: state.count + action.value }
     case SUB_VALUE:
-      return { count: state.count - 1 }
+      return { count: state.count - action.value }
     default:
       return state
   }
