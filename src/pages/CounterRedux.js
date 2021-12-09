@@ -17,9 +17,9 @@ function CounterRedux(props) {
   console.log(props.total)
 
   // 初始async
-  // useEffect(() => {
-  //   props.initValueAsync()
-  // }, [])
+  useEffect(() => {
+    props.initValueAsync()
+  }, [])
 
   return (
     <>
