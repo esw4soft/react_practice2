@@ -6,11 +6,11 @@
 20211122 紀錄 新增 emmet 語法  
 20211123 紀錄 新增 withRouter 相關訊息  
 20211124 紀錄 新增麵包屑流程
+20211210 紀錄 新增異步請求 Redux 操作
 
 ### React 練習
 
-此 repo 是用來存放 react.js 的練習  
-練習的檔案主要在 src 和 components 的資料夾  
+此 repo 是用來存放 React.js 的練習  
 branch 按照數字順序為練習順序 名稱則是練習的內容  
 cmd-shift-v or ctrl-shift-v : markdown Open preview
 
@@ -28,7 +28,14 @@ input 可控表單元素 拆成個別元件
 生命週期 掛載 更新 卸載各種階段  
 React 加入 Bootstrap SCSS  
 React 整合 jQuery (useRefs)  
-React-router-dom, withRouter 高階元件
+React-router-dom, withRouter 高階元件  
+動態麵包屑  
+asyncawait 請求  
+fetch 連接後端 nodejs  
+useReducer+useContext  
+redux intro  
+redux document: reducers,actions  
+redux-thunk
 
 ### 一些重要知識訊息
 
@@ -73,3 +80,13 @@ React-router-dom, withRouter 高階元件
 2.  建立 config 資料夾裡面放入路徑轉文字資料
 3.  在每個頁面加入麵包屑元件  
     流程:點選頁面 >> 載入麵包削元件 >> 讀取 location.pathname 配合 config 資料做路徑轉文字 >> 在渲染到每個頁面上
+
+### Redux 基本流程
+
+1. 建立 redux store middleware 連接 redux 跟 react (src 裡的 index.js)
+   如果有異步請求需使用 redux-thunk 或是其他中介軟體(Redux-Saga)
+2. 初始畫面跟 Store 拿資料渲染 (做渲染的那一頁)
+3. 做事件動作 >> 由 dispatch 或是 動作建立器去判斷要進入哪個 reducer (動作建立器函式存放在 actions 資料夾)
+4. 由 reducer 來去做 redux store 裡的狀態改變 (所有 reducer 放在 reducers 資料夾)
+5. 將改變的狀態放入 props 裡面 (mapStateToProps, mapDispatchToProps)
+6. 回到畫面再把 props 裡改變的值重新渲染 (做渲染的那一頁)
